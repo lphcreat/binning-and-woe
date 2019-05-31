@@ -14,7 +14,7 @@ iris = load_iris()
 df=pd.concat([pd.DataFrame(iris.data),pd.DataFrame(iris.target)],ignore_index=True,axis=1)  
 df.columns=iris.feature_names+['target']  
 df=df[df['target'].isin([1,2])]  
-#分割数据  
+### preprocess
 Sp=nc(bins_num=5)  
 clf=Sp.fit(df,'target',split_func='chi')  
 dff=clf.transform()  
@@ -24,6 +24,7 @@ wclf=Cw.fit(dff)
 wdf=wclf.transform()  
 print(wdf.head())  
 
+### creat model
 from sklearn.linear_model import LogisticRegression  
 from sklearn.model_selection import train_test_split  
 from sklearn.metrics import classification_report  
