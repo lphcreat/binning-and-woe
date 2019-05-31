@@ -1,5 +1,5 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-from binning.utils import woe_transform
+from utils import woe_transform
 
 class CattoWoe(BaseEstimator, TransformerMixin):
     """
@@ -25,7 +25,6 @@ class CattoWoe(BaseEstimator, TransformerMixin):
         self.woe_dict=woe_transform(df,self.label)
         return self
 
-    # @classmethod
     def transform(self, X=None,self_woedict=None):
         """Transform X using one-hot encoding.
         Parameters
