@@ -81,6 +81,7 @@ def check_length_interval(X,intervals):
 
 
 def chi_merge(data,attr,y,label,bins_num=15):
+    #some code from https://gist.github.com/alanzchen/17d0c4a45d59b79052b1cd07f531689e
     distinct_vals = sorted(set(data[attr])) # Sort the distinct values
     labels = sorted(set(y)) # Get all possible labels
     empty_count = {l: 0 for l in labels} # A helper function for padding the Counter()
