@@ -1,12 +1,7 @@
 from sklearn.base import BaseEstimator, TransformerMixin
 import math
 import sys
-from pathlib import Path
-filename = 'binning_woe'
-paths = str(Path(__file__))
-final_path = paths[:paths.find(filename) + len(filename)]
-sys.path.append(final_path)
-from binning.utils import get_interval
+from utils import get_interval
 
 class NumtoCategorical(BaseEstimator, TransformerMixin):
     """
