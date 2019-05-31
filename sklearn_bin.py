@@ -1,6 +1,4 @@
 from sklearn.base import BaseEstimator, TransformerMixin
-import math
-import sys
 from utils import get_interval
 
 class NumtoCategorical(BaseEstimator, TransformerMixin):
