@@ -6,6 +6,7 @@ if you will use/reference it,please click star ^_^.
 
 ## Example code
 
+### load data
 from sklearn.datasets import load_iris  
 import pandas as pd  
 from sklearn_bin import NumtoCategorical as nc  
