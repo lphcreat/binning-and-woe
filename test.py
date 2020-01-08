@@ -10,7 +10,7 @@ if __name__ == "__main__":
     df.columns=iris.feature_names+['target']
     df=df[df['target'].isin([1,2])]
     #分割数据
-    Sp=nc(bins_num=5,num_cols=iris.feature_names)
+    Sp=nc(bins_num=3,num_cols=iris.feature_names)
     clf=Sp.fit(df,'target',split_func='chi')
     dff=clf.transform()
 

@@ -49,7 +49,7 @@ class NumtoCategorical(BaseEstimator, TransformerMixin):
         return self
 
     def transform(self, X=None,cat_style=True):
-        """Transform X using one-hot encoding.
+        """Transform X using binning encoding.
         Parameters
         ----------
         X : dataframe, if you not input it will use fit data, 

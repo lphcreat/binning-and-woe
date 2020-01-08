@@ -28,7 +28,7 @@ class CattoWoe(BaseEstimator, TransformerMixin):
 
     # @classmethod
     def transform(self, X=None):
-        """Transform X using one-hot encoding.
+        """Transform X using woe encoding.
         Parameters
         ----------
         X : dataframe, if you not input it will use fit data, 
@@ -40,7 +40,7 @@ class CattoWoe(BaseEstimator, TransformerMixin):
         """
         df= X if X is not None else self.df
         woe_dict= self.self_woedict if self.self_woedict !=None else self.woe_dict
-        cols=list(filter(lambda item:item not in [self.label,'num'],df.columns))
+        cols=filter(lambda item:item not in [self.label,'num'],df.columns)
         for attr in cols:
             df[attr] = df[attr].map(woe_dict[attr])
         if X is None:
